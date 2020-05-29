@@ -23,6 +23,7 @@
 		756DFFFD248102FB001DC6AD /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFFC248102FB001DC6AD /* Timer.swift */; };
 		75A975F224811CA00082BE4D /* StopWatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A975F124811CA00082BE4D /* StopWatchViewModel.swift */; };
 		75A975F5248134A40082BE4D /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A975F4248134A40082BE4D /* Lap.swift */; };
+		75A975F924814C220082BE4D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75A975F824814C220082BE4D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		756DFFFC248102FB001DC6AD /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		75A975F124811CA00082BE4D /* StopWatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewModel.swift; sourceTree = "<group>"; };
 		75A975F4248134A40082BE4D /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
+		75A975F824814C220082BE4D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		756DFFC82481007A001DC6AD = {
 			isa = PBXGroup;
 			children = (
+				75A975F824814C220082BE4D /* README.md */,
 				756DFFD32481007A001DC6AD /* StopWatch */,
 				756DFFEA2481007C001DC6AD /* StopWatchTests */,
 				756DFFD22481007A001DC6AD /* Products */,
@@ -321,6 +324,7 @@
 			files = (
 				756D001224811441001DC6AD /* StopWatchViewController.xib in Resources */,
 				756DFFE12481007C001DC6AD /* LaunchScreen.storyboard in Resources */,
+				75A975F924814C220082BE4D /* README.md in Resources */,
 				756DFFDE2481007C001DC6AD /* Assets.xcassets in Resources */,
 				756DFFDC2481007A001DC6AD /* Main.storyboard in Resources */,
 			);
