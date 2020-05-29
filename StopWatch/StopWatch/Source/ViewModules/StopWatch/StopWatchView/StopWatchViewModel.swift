@@ -6,9 +6,13 @@
 //  Copyright © 2020 Ginés Sanchez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-enum StopWatchViewModelState {
+let currentTimeInHundredthOfSecondsKey = "currentTimeInHundredthOfSeconds"
+let hundredthOfSecondsKey = "hundredthOfSeconds"
+let currentStateKey = "currentState"
+
+enum StopWatchViewModelState: String {
     case initialized
     case ready
     case running
@@ -71,7 +75,11 @@ final class StopWatchViewModel: StopWatchViewModelType {
         self.state = .initialized
     }
 
-    //TODO: Add deinit
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
 }
 
 // MARK: - StopWatchViewControllerDelegate
@@ -142,8 +150,21 @@ private extension StopWatchViewModel {
         case .initialized:
                 break
         case .ready:
-            //TODO: Add move to background notifications
             hundredthOfASecond = 0
+            lapsArray = []
+
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(saveStopWatchState),
+                                                   name: UIApplication.willResignActiveNotification,
+                                                   object: nil)
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(saveStopWatchState),
+                                                   name: UIApplication.willTerminateNotification,
+                                                   object: nil)
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(restoreStopWatchState),
+                                                   name: UIApplication.didBecomeActiveNotification,
+                                                   object: nil)
 
         case .running:
             timer = Timer(interval: DispatchTimeInterval.milliseconds(10),
@@ -194,4 +215,51 @@ private extension StopWatchViewModel {
 
 private extension StopWatchViewModel {
 
+    @objc func saveStopWatchState(note: NSNotification) {
+        //TODO: Save laps
+
+        UserDefaults.standard.set(hundredthOfASecond, forKey: hundredthOfSecondsKey)
+        UserDefaults.standard.set(CFAbsoluteTimeGetCurrent() * 100, forKey: currentTimeInHundredthOfSecondsKey)
+        UserDefaults.standard.set(state.rawValue, forKey: currentStateKey)
+    }
+
+    @objc func restoreStopWatchState(note: NSNotification) {
+        //TODO: Restore laps
+
+        guard let previousStateString = UserDefaults.standard.string(forKey: currentStateKey),
+                let previousState = StopWatchViewModelState(rawValue: previousStateString) else {
+            return
+        }
+
+        UserDefaults.standard.removeObject(forKey: currentStateKey)
+
+        switch previousState {
+            case .initialized:
+                break
+            case .ready, .running:
+                let previousHundredthOfSecondsInt = UserDefaults.standard.integer(forKey: hundredthOfSecondsKey)
+                let previousTimeInHundredthOfSecondsInt = UserDefaults.standard.integer(forKey: currentTimeInHundredthOfSecondsKey)
+
+                let previousTimeInHundredthOfSeconds: CFAbsoluteTime = Double(previousTimeInHundredthOfSecondsInt)
+                let currentTimeInHundredthOfSeconds: Double = CFAbsoluteTimeGetCurrent() * 100
+                let previousHundredOfSeconds: Double = Double(previousHundredthOfSecondsInt)
+
+                self.hundredthOfASecond = Int(previousHundredOfSeconds + (currentTimeInHundredthOfSeconds - previousTimeInHundredthOfSeconds))
+                UserDefaults.standard.removeObject(forKey: hundredthOfSecondsKey)
+                UserDefaults.standard.removeObject(forKey: currentTimeInHundredthOfSecondsKey)
+            case .stopped:
+                let previousHundredthOfSecondsInt = UserDefaults.standard.integer(forKey: hundredthOfSecondsKey)
+                self.hundredthOfASecond = previousHundredthOfSecondsInt
+                UserDefaults.standard.removeObject(forKey: hundredthOfSecondsKey)
+                UserDefaults.standard.removeObject(forKey: currentTimeInHundredthOfSecondsKey)
+            case .trackingLap:
+                break
+            case .resetting:
+                break
+        }
+
+        self.state = previousState
+    }
 }
+
+
