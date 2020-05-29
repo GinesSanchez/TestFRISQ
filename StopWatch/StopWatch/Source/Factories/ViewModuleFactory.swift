@@ -9,9 +9,12 @@
 import Foundation
 
 protocol ViewModuleFactoryType {
-    //TODO:
+    func createStopWatchViewModule() -> StopWatchViewController
 }
 
 final class ViewModuleFactory: ViewModuleFactoryType {
-    //TODO:
+    func createStopWatchViewModule() -> StopWatchViewController {
+        let viewController: StopWatchViewController = StopWatchViewController.init(nibName: "StopWatchViewController", bundle: nil)
+        return viewController
+    }
 }

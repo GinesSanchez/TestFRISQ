@@ -11,6 +11,9 @@
 		756D000524810E1A001DC6AD /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000424810E1A001DC6AD /* Coordinating.swift */; };
 		756D000824810E45001DC6AD /* ViewModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000724810E45001DC6AD /* ViewModuleFactory.swift */; };
 		756D000A24810EEC001DC6AD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000924810EEC001DC6AD /* AppCoordinator.swift */; };
+		756D000D24811318001DC6AD /* StopWatchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000C24811318001DC6AD /* StopWatchCoordinator.swift */; };
+		756D001124811441001DC6AD /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000F24811441001DC6AD /* StopWatchViewController.swift */; };
+		756D001224811441001DC6AD /* StopWatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756D001024811441001DC6AD /* StopWatchViewController.xib */; };
 		756DFFD52481007A001DC6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD42481007A001DC6AD /* AppDelegate.swift */; };
 		756DFFD72481007A001DC6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD62481007A001DC6AD /* SceneDelegate.swift */; };
 		756DFFD92481007A001DC6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD82481007A001DC6AD /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 		756D000424810E1A001DC6AD /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
 		756D000724810E45001DC6AD /* ViewModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModuleFactory.swift; sourceTree = "<group>"; };
 		756D000924810EEC001DC6AD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		756D000C24811318001DC6AD /* StopWatchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchCoordinator.swift; sourceTree = "<group>"; };
+		756D000F24811441001DC6AD /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
+		756D001024811441001DC6AD /* StopWatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopWatchViewController.xib; sourceTree = "<group>"; };
 		756DFFD12481007A001DC6AD /* StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756DFFD42481007A001DC6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756DFFD62481007A001DC6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +96,24 @@
 				756D000724810E45001DC6AD /* ViewModuleFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		756D000B24811284001DC6AD /* StopWatch */ = {
+			isa = PBXGroup;
+			children = (
+				756D000C24811318001DC6AD /* StopWatchCoordinator.swift */,
+				756D000E24811430001DC6AD /* StopWatchView */,
+			);
+			path = StopWatch;
+			sourceTree = "<group>";
+		};
+		756D000E24811430001DC6AD /* StopWatchView */ = {
+			isa = PBXGroup;
+			children = (
+				756D000F24811441001DC6AD /* StopWatchViewController.swift */,
+				756D001024811441001DC6AD /* StopWatchViewController.xib */,
+			);
+			path = StopWatchView;
 			sourceTree = "<group>";
 		};
 		756DFFC82481007A001DC6AD = {
@@ -164,6 +188,7 @@
 		756DFFF924810251001DC6AD /* ViewModules */ = {
 			isa = PBXGroup;
 			children = (
+				756D000B24811284001DC6AD /* StopWatch */,
 				756DFFFA24810258001DC6AD /* Default */,
 			);
 			path = ViewModules;
@@ -283,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756D001224811441001DC6AD /* StopWatchViewController.xib in Resources */,
 				756DFFE12481007C001DC6AD /* LaunchScreen.storyboard in Resources */,
 				756DFFDE2481007C001DC6AD /* Assets.xcassets in Resources */,
 				756DFFDC2481007A001DC6AD /* Main.storyboard in Resources */,
@@ -307,8 +333,10 @@
 				756D000824810E45001DC6AD /* ViewModuleFactory.swift in Sources */,
 				756DFFD52481007A001DC6AD /* AppDelegate.swift in Sources */,
 				756D000524810E1A001DC6AD /* Coordinating.swift in Sources */,
+				756D001124811441001DC6AD /* StopWatchViewController.swift in Sources */,
 				756DFFFD248102FB001DC6AD /* Timer.swift in Sources */,
 				756DFFD72481007A001DC6AD /* SceneDelegate.swift in Sources */,
+				756D000D24811318001DC6AD /* StopWatchCoordinator.swift in Sources */,
 				756D000A24810EEC001DC6AD /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

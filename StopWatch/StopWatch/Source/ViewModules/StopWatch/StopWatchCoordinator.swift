@@ -1,5 +1,5 @@
 //
-//  AppCoordinator.swift
+//  StopWatchCoordinator.swift
 //  StopWatch
 //
 //  Created by Gines Sanchez Merono on 2020-05-29.
@@ -8,14 +8,13 @@
 
 import UIKit
 
-protocol AppCoordinatorType: Coordinating { }
+protocol StopWatchCoordinatorType: Coordinating { }
 
-final class AppCoordinator: AppCoordinatorType {
-
+final class StopWatchCoordinator: StopWatchCoordinatorType {
     let navigationController: UINavigationController
     let viewModuleFactory: ViewModuleFactoryType
 
-    private var stopWatchCoordinator: StopWatchCoordinatorType?
+    private var stopWatchViewController: StopWatchViewController?
 
     init(navigationController: UINavigationController, viewModuleFactory: ViewModuleFactoryType) {
         self.navigationController = navigationController
@@ -23,12 +22,12 @@ final class AppCoordinator: AppCoordinatorType {
     }
 
     func start() {
-        self.stopWatchCoordinator = StopWatchCoordinator.init(navigationController: self.navigationController,
-                                                              viewModuleFactory: self.viewModuleFactory)
-        self.stopWatchCoordinator?.start()
+        stopWatchViewController = viewModuleFactory.createStopWatchViewModule()
+        navigationController.pushViewController(stopWatchViewController!, animated: true)
     }
 
     func stop() {
-        self.stopWatchCoordinator?.stop()
+        navigationController.popViewController(animated: true)
+        stopWatchViewController = nil
     }
 }
