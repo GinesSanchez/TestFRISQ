@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		756D000224810957001DC6AD /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000124810957001DC6AD /* TimerTests.swift */; };
+		756D000524810E1A001DC6AD /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000424810E1A001DC6AD /* Coordinating.swift */; };
+		756D000824810E45001DC6AD /* ViewModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000724810E45001DC6AD /* ViewModuleFactory.swift */; };
+		756D000A24810EEC001DC6AD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000924810EEC001DC6AD /* AppCoordinator.swift */; };
 		756DFFD52481007A001DC6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD42481007A001DC6AD /* AppDelegate.swift */; };
 		756DFFD72481007A001DC6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD62481007A001DC6AD /* SceneDelegate.swift */; };
 		756DFFD92481007A001DC6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD82481007A001DC6AD /* ViewController.swift */; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		756D000124810957001DC6AD /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
+		756D000424810E1A001DC6AD /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
+		756D000724810E45001DC6AD /* ViewModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModuleFactory.swift; sourceTree = "<group>"; };
+		756D000924810EEC001DC6AD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		756DFFD12481007A001DC6AD /* StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756DFFD42481007A001DC6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756DFFD62481007A001DC6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,22 @@
 				756D000124810957001DC6AD /* TimerTests.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		756D000324810DE4001DC6AD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				756D000424810E1A001DC6AD /* Coordinating.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		756D000624810E36001DC6AD /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				756D000724810E45001DC6AD /* ViewModuleFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		756DFFC82481007A001DC6AD = {
@@ -112,6 +134,8 @@
 		756DFFF624810164001DC6AD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				756D000624810E36001DC6AD /* Factories */,
+				756D000324810DE4001DC6AD /* Protocols */,
 				756DFFFB248102E2001DC6AD /* Classes */,
 				756DFFF924810251001DC6AD /* Views */,
 				756DFFF82481017C001DC6AD /* AppAndSceneDelegate */,
@@ -132,6 +156,7 @@
 			children = (
 				756DFFD42481007A001DC6AD /* AppDelegate.swift */,
 				756DFFD62481007A001DC6AD /* SceneDelegate.swift */,
+				756D000924810EEC001DC6AD /* AppCoordinator.swift */,
 			);
 			path = AppAndSceneDelegate;
 			sourceTree = "<group>";
@@ -279,9 +304,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				756DFFD92481007A001DC6AD /* ViewController.swift in Sources */,
+				756D000824810E45001DC6AD /* ViewModuleFactory.swift in Sources */,
 				756DFFD52481007A001DC6AD /* AppDelegate.swift in Sources */,
+				756D000524810E1A001DC6AD /* Coordinating.swift in Sources */,
 				756DFFFD248102FB001DC6AD /* Timer.swift in Sources */,
 				756DFFD72481007A001DC6AD /* SceneDelegate.swift in Sources */,
+				756D000A24810EEC001DC6AD /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
