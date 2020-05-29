@@ -137,7 +137,7 @@
 				756D000624810E36001DC6AD /* Factories */,
 				756D000324810DE4001DC6AD /* Protocols */,
 				756DFFFB248102E2001DC6AD /* Classes */,
-				756DFFF924810251001DC6AD /* Views */,
+				756DFFF924810251001DC6AD /* ViewModules */,
 				756DFFF82481017C001DC6AD /* AppAndSceneDelegate */,
 			);
 			path = Source;
@@ -161,12 +161,12 @@
 			path = AppAndSceneDelegate;
 			sourceTree = "<group>";
 		};
-		756DFFF924810251001DC6AD /* Views */ = {
+		756DFFF924810251001DC6AD /* ViewModules */ = {
 			isa = PBXGroup;
 			children = (
 				756DFFFA24810258001DC6AD /* Default */,
 			);
-			path = Views;
+			path = ViewModules;
 			sourceTree = "<group>";
 		};
 		756DFFFA24810258001DC6AD /* Default */ = {
