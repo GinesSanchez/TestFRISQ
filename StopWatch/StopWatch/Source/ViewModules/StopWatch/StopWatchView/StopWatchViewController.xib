@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="mainButton" destination="pBg-8h-gQQ" id="zbM-2d-UO3"/>
                 <outlet property="secondaryButton" destination="dZU-xq-IE6" id="Rzh-3l-Jt0"/>
+                <outlet property="tableView" destination="NXo-nf-syK" id="QVh-zK-pLW"/>
                 <outlet property="timeLabel" destination="70c-4x-tw8" id="06P-XU-0dN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oF7-i1-VX8">
-                    <rect key="frame" x="20" y="246.66666666666663" width="374" height="60"/>
+                    <rect key="frame" x="20" y="286.66666666666669" width="374" height="60"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZU-xq-IE6">
                             <rect key="frame" x="0.0" y="0.0" width="182" height="60"/>
@@ -51,20 +52,28 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50:23,22" textAlignment="center" lineBreakMode="clip" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="70c-4x-tw8">
-                    <rect key="frame" x="20" y="104" width="374" height="102.66666666666669"/>
+                    <rect key="frame" x="20" y="144" width="374" height="102.66666666666669"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="86"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NXo-nf-syK">
+                    <rect key="frame" x="20" y="386.66666666666674" width="374" height="475.33333333333326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="oF7-i1-VX8" firstAttribute="top" secondItem="70c-4x-tw8" secondAttribute="bottom" constant="40" id="18d-Nv-EgT"/>
                 <constraint firstItem="oF7-i1-VX8" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="31s-eL-0IK"/>
-                <constraint firstItem="70c-4x-tw8" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="60" id="SCt-Eb-p31"/>
+                <constraint firstItem="NXo-nf-syK" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="NQn-Ox-BRX"/>
+                <constraint firstItem="70c-4x-tw8" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="SCt-Eb-p31"/>
+                <constraint firstItem="NXo-nf-syK" firstAttribute="top" secondItem="oF7-i1-VX8" secondAttribute="bottom" constant="40" id="Tie-ZR-UIh"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="NXo-nf-syK" secondAttribute="trailing" constant="20" id="WJv-pp-bv1"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="70c-4x-tw8" secondAttribute="trailing" constant="20" id="ao1-kW-eNW"/>
                 <constraint firstItem="70c-4x-tw8" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="mpl-lx-972"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="oF7-i1-VX8" secondAttribute="trailing" constant="20" id="msP-X5-r3h"/>
+                <constraint firstItem="NXo-nf-syK" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="val-QG-CC1"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="-210.1449275362319" y="138.61607142857142"/>

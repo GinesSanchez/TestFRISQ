@@ -23,6 +23,7 @@
 		756DFFEC2481007C001DC6AD /* StopWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFEB2481007C001DC6AD /* StopWatchTests.swift */; };
 		756DFFFD248102FB001DC6AD /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFFC248102FB001DC6AD /* Timer.swift */; };
 		75A975F224811CA00082BE4D /* StopWatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A975F124811CA00082BE4D /* StopWatchViewModel.swift */; };
+		75A975F5248134A40082BE4D /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A975F4248134A40082BE4D /* Lap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		756DFFED2481007C001DC6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		756DFFFC248102FB001DC6AD /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		75A975F124811CA00082BE4D /* StopWatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewModel.swift; sourceTree = "<group>"; };
+		75A975F4248134A40082BE4D /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		756D000B24811284001DC6AD /* StopWatch */ = {
 			isa = PBXGroup;
 			children = (
+				75A975F3248134970082BE4D /* Models */,
 				756D000C24811318001DC6AD /* StopWatchCoordinator.swift */,
 				756D000E24811430001DC6AD /* StopWatchView */,
 			);
@@ -230,6 +233,14 @@
 			path = DispatchSourceTimer;
 			sourceTree = "<group>";
 		};
+		75A975F3248134970082BE4D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75A975F4248134A40082BE4D /* Lap.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,6 +345,7 @@
 			files = (
 				756DFFD92481007A001DC6AD /* ViewController.swift in Sources */,
 				756D000824810E45001DC6AD /* ViewModuleFactory.swift in Sources */,
+				75A975F5248134A40082BE4D /* Lap.swift in Sources */,
 				756DFFD52481007A001DC6AD /* AppDelegate.swift in Sources */,
 				756D000524810E1A001DC6AD /* Coordinating.swift in Sources */,
 				75A975F224811CA00082BE4D /* StopWatchViewModel.swift in Sources */,

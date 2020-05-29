@@ -29,7 +29,7 @@ enum StopWatchViewModelEvent {
 protocol StopWatchViewModelDelegate: class {
     func viewModel(_ viewModel: StopWatchViewModelType, stateDidChange state: StopWatchViewModelState)
     func viewModel(_ viewModel: StopWatchViewModelType, updateTimer time: String)
-    func viewModel(_ viewModel: StopWatchViewModelType, trackLap time: String)
+    func viewModel(_ viewModel: StopWatchViewModelType, updateTrackedLaps lapsArray: [Lap])
 }
 
 protocol StopWatchViewModelType {
@@ -56,6 +56,12 @@ final class StopWatchViewModel: StopWatchViewModelType {
     private var hundredthOfASecond: Int = 0 {
         didSet {
             delegate?.viewModel(self, updateTimer: timeFormatted(hundredthOfASecond: hundredthOfASecond))
+        }
+    }
+
+    private var lapsArray: [Lap] = [] {
+        didSet {
+            delegate?.viewModel(self, updateTrackedLaps: lapsArray)
         }
     }
 
@@ -140,8 +146,8 @@ private extension StopWatchViewModel {
             hundredthOfASecond = 0
 
         case .running:
-            timer = Timer(interval: DispatchTimeInterval.nanoseconds(10),
-                          leeway: DispatchTimeInterval.nanoseconds(1),
+            timer = Timer(interval: DispatchTimeInterval.milliseconds(10),
+                          leeway: DispatchTimeInterval.milliseconds(1),
                           queue: DispatchQueue.init(label: "com.stopWatch.timerQueue"),
                           handler: { [weak self] in
 
@@ -152,11 +158,14 @@ private extension StopWatchViewModel {
         case .stopped:
             timer?.cancel()
         case .trackingLap:
-            delegate?.viewModel(self, trackLap: timeFormatted(hundredthOfASecond: hundredthOfASecond))
+            let trackedLap = Lap(title: "Lap \(lapsArray.count + 1)",
+                                time: timeFormatted(hundredthOfASecond: hundredthOfASecond))
+            lapsArray.append(trackedLap)
             event = .lapTracked
             break
         case .resetting:
             hundredthOfASecond = 0
+            lapsArray = []
             event = .timeResetted
             break
         }
@@ -165,6 +174,7 @@ private extension StopWatchViewModel {
     }
 }
 
+// MARK: - Helpers
 private extension StopWatchViewModel {
     //TODO: Move to an extension
     func timeFormatted(hundredthOfASecond totalHundredthOfASecond: Int) -> String {
@@ -180,4 +190,8 @@ private extension StopWatchViewModel {
             return String(format: "%02d:%02d,%02d",minutes, seconds, hundredthOfASecond)
         }
     }
+}
+
+private extension StopWatchViewModel {
+
 }

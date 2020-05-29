@@ -19,6 +19,13 @@ final class StopWatchViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var secondaryButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+
+    private var lapsArray: [Lap] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     var viewModel: StopWatchViewControllerDelegate?
 
@@ -49,7 +56,8 @@ private extension StopWatchViewController {
     func setUp() {
         setUpLabels()
         setUpButtons()
-        navigationBar()
+        setUpNavigationBar()
+        setUpTableView()
     }
 
     func setUpLabels() {
@@ -73,8 +81,14 @@ private extension StopWatchViewController {
         secondaryButton.layer.borderColor = UIColor.black.cgColor
     }
 
-    func navigationBar() {
+    func setUpNavigationBar() {
         self.title = "Timer";
+    }
+
+    func setUpTableView() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LapCell")
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -96,6 +110,7 @@ extension StopWatchViewController: StopWatchViewModelDelegate {
             case .resetting:
                 self?.secondaryButton.setTitle("Lap", for: .normal)
                 self?.secondaryButton.isEnabled = false
+                self?.lapsArray = []
             case .trackingLap:
                 break
             }
@@ -108,10 +123,23 @@ extension StopWatchViewController: StopWatchViewModelDelegate {
         }
     }
 
-    func viewModel(_ viewModel: StopWatchViewModelType, trackLap time: String) {
+    func viewModel(_ viewModel: StopWatchViewModelType, updateTrackedLaps lapsArray: [Lap]) {
         DispatchQueue.main.async { [weak self] in
-            //TODO: Update table view
-            print("Tracked Lap Time: \(time)")
+            self?.lapsArray = lapsArray
         }
+    }
+}
+
+// MARK: - StopWatchViewModelDelegate
+extension StopWatchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lapsArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: .value1, reuseIdentifier: "LapCell")
+        cell.textLabel?.text = self.lapsArray[indexPath.row].title
+        cell.detailTextLabel?.text = self.lapsArray[indexPath.row].time
+        return cell
     }
 }
