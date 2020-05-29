@@ -15,7 +15,6 @@
 		756D001124811441001DC6AD /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756D000F24811441001DC6AD /* StopWatchViewController.swift */; };
 		756D001224811441001DC6AD /* StopWatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756D001024811441001DC6AD /* StopWatchViewController.xib */; };
 		756DFFD52481007A001DC6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD42481007A001DC6AD /* AppDelegate.swift */; };
-		756DFFD72481007A001DC6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD62481007A001DC6AD /* SceneDelegate.swift */; };
 		756DFFD92481007A001DC6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFD82481007A001DC6AD /* ViewController.swift */; };
 		756DFFDC2481007A001DC6AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756DFFDA2481007A001DC6AD /* Main.storyboard */; };
 		756DFFDE2481007C001DC6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756DFFDD2481007C001DC6AD /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 		756D001024811441001DC6AD /* StopWatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopWatchViewController.xib; sourceTree = "<group>"; };
 		756DFFD12481007A001DC6AD /* StopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756DFFD42481007A001DC6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		756DFFD62481007A001DC6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		756DFFD82481007A001DC6AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		756DFFDB2481007A001DC6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		756DFFDD2481007C001DC6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				756DFFD42481007A001DC6AD /* AppDelegate.swift */,
-				756DFFD62481007A001DC6AD /* SceneDelegate.swift */,
 				756D000924810EEC001DC6AD /* AppCoordinator.swift */,
 			);
 			path = AppAndSceneDelegate;
@@ -351,7 +348,6 @@
 				75A975F224811CA00082BE4D /* StopWatchViewModel.swift in Sources */,
 				756D001124811441001DC6AD /* StopWatchViewController.swift in Sources */,
 				756DFFFD248102FB001DC6AD /* Timer.swift in Sources */,
-				756DFFD72481007A001DC6AD /* SceneDelegate.swift in Sources */,
 				756D000D24811318001DC6AD /* StopWatchCoordinator.swift in Sources */,
 				756D000A24810EEC001DC6AD /* AppCoordinator.swift in Sources */,
 			);
@@ -446,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

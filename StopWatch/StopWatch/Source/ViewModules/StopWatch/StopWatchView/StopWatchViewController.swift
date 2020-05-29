@@ -61,7 +61,7 @@ private extension StopWatchViewController {
     }
 
     func setUpLabels() {
-        timeLabel.font = UIFont.monospacedSystemFont(ofSize: timeLabel.font.pointSize, weight: .semibold)
+        timeLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeLabel.font.pointSize, weight: .semibold)
         timeLabel.text = "00:00,00";
     }
 
