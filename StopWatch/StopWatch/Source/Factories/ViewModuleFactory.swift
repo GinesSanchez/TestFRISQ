@@ -15,6 +15,8 @@ protocol ViewModuleFactoryType {
 final class ViewModuleFactory: ViewModuleFactoryType {
     func createStopWatchViewModule() -> StopWatchViewController {
         let viewController: StopWatchViewController = StopWatchViewController.init(nibName: "StopWatchViewController", bundle: nil)
+        let viewModel: StopWatchViewModel = StopWatchViewModel.init(delegate: viewController)
+        viewController.viewModel = viewModel
         return viewController
     }
 }

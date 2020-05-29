@@ -59,7 +59,7 @@ private extension StopWatchViewController {
 
     func setUpButtons() {
         mainButton.setTitle("Start", for: .normal)
-        secondaryButton.setTitle("Reset", for: .normal)
+        secondaryButton.setTitle("Lap", for: .normal)
         secondaryButton.isEnabled = false
 
         mainButton.backgroundColor = .lightGray
@@ -75,5 +75,43 @@ private extension StopWatchViewController {
 
     func navigationBar() {
         self.title = "Timer";
+    }
+}
+
+// MARK: - StopWatchViewModelDelegate
+extension StopWatchViewController: StopWatchViewModelDelegate {
+    func viewModel(_ viewModel: StopWatchViewModelType, stateDidChange state: StopWatchViewModelState) {
+        DispatchQueue.main.async { [weak self] in
+            switch state {
+            case .initialized:
+                break
+            case .ready:
+                break
+            case .running:
+                self?.mainButton.setTitle("Stop", for: .normal)
+                self?.secondaryButton.isEnabled = true
+            case .stopped:
+                self?.mainButton.setTitle("Start", for: .normal)
+                self?.secondaryButton.setTitle("Reset", for: .normal)
+            case .resetting:
+                self?.secondaryButton.setTitle("Lap", for: .normal)
+                self?.secondaryButton.isEnabled = false
+            case .trackingLap:
+                break
+            }
+        }
+    }
+
+    func viewModel(_ viewModel: StopWatchViewModelType, updateTimer time: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.timeLabel.text = time
+        }
+    }
+
+    func viewModel(_ viewModel: StopWatchViewModelType, trackLap time: String) {
+        DispatchQueue.main.async { [weak self] in
+            //TODO: Update table view
+            print("Tracked Lap Time: \(time)")
+        }
     }
 }

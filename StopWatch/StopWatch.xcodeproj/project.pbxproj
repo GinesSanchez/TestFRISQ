@@ -22,6 +22,7 @@
 		756DFFE12481007C001DC6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756DFFDF2481007C001DC6AD /* LaunchScreen.storyboard */; };
 		756DFFEC2481007C001DC6AD /* StopWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFEB2481007C001DC6AD /* StopWatchTests.swift */; };
 		756DFFFD248102FB001DC6AD /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756DFFFC248102FB001DC6AD /* Timer.swift */; };
+		75A975F224811CA00082BE4D /* StopWatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A975F124811CA00082BE4D /* StopWatchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		756DFFEB2481007C001DC6AD /* StopWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchTests.swift; sourceTree = "<group>"; };
 		756DFFED2481007C001DC6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		756DFFFC248102FB001DC6AD /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		75A975F124811CA00082BE4D /* StopWatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		756D000E24811430001DC6AD /* StopWatchView */ = {
 			isa = PBXGroup;
 			children = (
+				75A975F124811CA00082BE4D /* StopWatchViewModel.swift */,
 				756D000F24811441001DC6AD /* StopWatchViewController.swift */,
 				756D001024811441001DC6AD /* StopWatchViewController.xib */,
 			);
@@ -333,6 +336,7 @@
 				756D000824810E45001DC6AD /* ViewModuleFactory.swift in Sources */,
 				756DFFD52481007A001DC6AD /* AppDelegate.swift in Sources */,
 				756D000524810E1A001DC6AD /* Coordinating.swift in Sources */,
+				75A975F224811CA00082BE4D /* StopWatchViewModel.swift in Sources */,
 				756D001124811441001DC6AD /* StopWatchViewController.swift in Sources */,
 				756DFFFD248102FB001DC6AD /* Timer.swift in Sources */,
 				756DFFD72481007A001DC6AD /* SceneDelegate.swift in Sources */,
